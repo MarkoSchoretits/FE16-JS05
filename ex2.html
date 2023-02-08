@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-Basic Ex1</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+
+    <h2>Cars</h2>
+    <p id="p_cars">cars</p>
+
+    <h2>Animals</h2>
+    <p id="p_animals">animals</p>
+
+    <h2>People</h2>
+    <p id="p_people">people</p>
+
+    <script>
+
+        // CARS
+        // define Class
+        class Car {
+            brand;
+            model;
+            color;
+
+            constructor (brand, model, color) {
+                this.brand = brand;
+                this.model = model;
+                this.color = color;
+            };
+
+            fullCarDescription() {
+                return `${this.brand} ${this.model} (${this.color})`;
+            };
+        }
+
+        // make objects
+        const car1 = new Car("FIAT", "500", "pale white");
+        const car2 = new Car("SEAT", "500", "off white");
+        const car3 = new Car("Citroen", "C4", "lime");
+        
+        // output to document
+        document.getElementById("p_cars").innerHTML = (
+            car1.fullCarDescription() + "<br>" + 
+            car2.fullCarDescription() + "<br>" + 
+            car3.fullCarDescription()
+            );
+
+
+        // ANIMALS
+        // define Class
+        class Animal {
+            species;
+            nick;
+            classification;
+            speciality;
+
+            constructor(species, nick, classification, speciality) {
+                this.species = species;
+                this.nick = nick;
+                this.classification = classification;
+                this.speciality = speciality;
+            };
+            academic() {
+                return `Sir ${this.nick} rer nat ${this.species} esq`
+            };
+            vita(){
+                return `Vita: <br>
+                   - ${this.classification} <br>
+                   - ${this.speciality} <br>`
+            }
+        }
+
+        // make objects
+        const animal1 = new Animal("Raccoon", "Trash Panda", "Not a rodent!", "No Stripes but Rings, speaks in 14 different sounds, feces do not reek");
+        const animal2 = new Animal("Badger", "Cheeky Panda", "Not a rodent either.", "Rascal, longitudinal stripes");
+        const animal3 = new Animal("Skunk", "Fart Panda", "Pestilant like a rat, but yet not a rodent", "Talkin' 'bout bad breath? ;-)")
+
+        // output to html
+        document.getElementById("p_animals").innerHTML = (
+            animal1.academic() + "<br>" + animal1.vita() + "<br>" +
+            animal2.academic() + "<br>" + animal2.vita() + "<br>" +
+            animal3.academic() + "<br>" + animal3.vita() + "<br>"
+        )
+
+        // PEOPLE
+        // define Class
+        class Person {
+            fname;
+            lname;
+            nick;
+            favDish;
+
+            constructor(fname, lname, nick, favDish) {
+                this.fname = fname;
+                this.lname = lname;
+                this.nick = nick;
+                this.favDish = favDish;
+            };
+
+            coLubim() {
+                return `${this.nick} ${this.lname} (${this.fname}) lubi ${this.favDish} i je je.`
+            };
+        }
+
+        // make objects
+        const person1 = new Person("Urszula", "Berdak", "Mamo", "Ice cream");
+        const person2 = new Person("Marko", "Schoretits", "Tati", "Süppchen");
+        const person3 = new Person("Thomas", "Berdak-Schoretits", "Dudu", "Daddy's soup");
+
+        // output to html
+        document.getElementById("p_people").innerHTML = (
+            person1.coLubim() + "<br>" +
+            person2.coLubim() + "<br>" +
+            person3.coLubim()
+        );
+    </script>
+</body>
+</html>
