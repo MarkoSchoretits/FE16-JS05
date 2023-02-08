@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object-Basic ex1</title>
+</head>
+
+<body>
+    <h1>Objects</h1>
+
+    <h2>Cars</h2>
+    <p id="p_cars">cars</p>
+
+    <h2>Animals</h2>
+    <p id="p_animals">animals</p>
+
+    <h2>People</h2>
+    <p id="p_people">people</p>
+
+    <script>
+
+        // CARS
+        const car1 = {
+            brand: "FIAT",
+            model: "500",
+            color: "pale white",
+            fullCarDescription: function(){
+                return `${this.brand} ${this.model} (${this.color})`;
+            }
+        }
+        const car2 = {
+            brand: "SEAT",
+            model: "500",
+            color: "off white",
+            fullCarDescription: function(){
+                return `${this.brand} ${this.model} (${this.color})`;
+            }
+        }
+        const car3 = {
+            brand: "Citroen",
+            model: "C4",
+            color: "lime",
+            fullCarDescription: function(){
+                return `${this.brand} ${this.model} (${this.color})`;
+            }
+        }
+        
+        document.getElementById("p_cars").innerHTML = (
+            car1.fullCarDescription() + "<br>" + 
+            car2.fullCarDescription() + "<br>" + 
+            car3.fullCarDescription()
+            );
+
+        // Animals
+        const animal1 = {
+            species: "Raccoon",
+            nick: "Trash Panda",
+            classification: "Not a rodent!",
+            speciality: "No Stripes but Rings, speaks in 14 different sounds, feces do not reek",
+            academic: function(){
+                return `Sir ${this.nick} rer nat ${this.species} esq`
+            },
+            vita: function(){
+                return `Vita: <br>
+                   - ${this.classification} <br>
+                   - ${this.speciality} <br>`
+            }
+        }
+        const animal2 = {
+            species: "Badger",
+            nick: "Cheeky Panda",
+            classification: "Not a rodent either.",
+            speciality: "Rascal, longitudinal stripes",
+            academic: function(){
+                return `Sir ${this.nick} rer nat ${this.species} esq`
+            },
+            vita: function(){
+                return `Vita: <br>
+                   - ${this.classification} <br>
+                   - ${this.speciality} <br>`
+            }
+
+        }
+        const animal3 = {
+            species: "Skunk",
+            nick: "Fart Panda",
+            classification: "Pestilant like a rat, but yet not a rodent",
+            speciality: "Talkin' 'bout bad breath? ;-)",
+            academic: function(){
+                return `Sir ${this.nick} rer nat ${this.species} esq`
+            },
+            vita: function(){
+                return `Vita: <br>
+                   - ${this.classification} <br>
+                   - ${this.speciality} <br>`
+            }
+        }
+
+        document.getElementById("p_animals").innerHTML = (
+            animal1.academic() + "<br>" + animal1.vita() + "<br>" +
+            animal2.academic() + "<br>" + animal2.vita() + "<br>" +
+            animal3.academic() + "<br>" + animal3.vita() + "<br>"
+        )
+
+        // PEOPLE
+        const person1 = {
+            fname: "Urszula",
+            lname: "Berdak",
+            nick: "Mamo",
+            favDish: "Ice cream",
+            coLubim: function(){
+                return `${this.nick} ${this.lname} (${this.fname}) lubi ${this.favDish} i je je.`
+            }
+        }
+        const person2 = {
+            fname: "Marko",
+            lname: "Schoretits",
+            nick: "Tati",
+            favDish: "Süppchen",
+            coLubim: function(){
+                return `${this.nick} ${this.lname} (${this.fname}) lubi ${this.favDish} i je je.`
+            }
+        }
+        const person3 = {
+            fname: "Thomas",
+            lname: "Berdak-Schoretits",
+            nick: "Dudu",
+            favDish: "Daddy's soup",
+            coLubim: function(){
+                return `${this.nick} ${this.lname} (${this.fname}) lubi ${this.favDish} i je je.`
+            }
+        }
+
+        document.getElementById("p_people").innerHTML = (
+            person1.coLubim() + "<br>" +
+            person2.coLubim() + "<br>" +
+            person3.coLubim()
+        )
+    </script>
+</body>
+</html>
